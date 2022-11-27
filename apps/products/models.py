@@ -1,7 +1,11 @@
 from django.db import models
-
+from apps.users.models import User
 # Create your models here.
 class Product(models.Model):
+    user = models.ForeignKey(
+        User, on_delete = models.CASCADE,
+        related_name = "product_user"
+    )
     title = models.CharField(
         max_length = 255,
         verbose_name = "Название продукта"

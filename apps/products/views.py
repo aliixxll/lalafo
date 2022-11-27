@@ -11,3 +11,10 @@ def product_detail(request, id):
         'setting' : setting,
     }
     return render(request, 'single-product.html', context)
+
+def product_create(request):
+    setting = Setting.objects.latest('id')
+    context = {
+        'setting' : setting,
+    }
+    return render(request, 'product_create.html', context)

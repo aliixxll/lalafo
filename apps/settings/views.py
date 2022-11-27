@@ -24,3 +24,4 @@ def product_detail(request, id):
         'setting' : setting,
     }
     return render(request, 'single-product.html', context)
+
